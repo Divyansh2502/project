@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="sort.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Sorting Visualizer</h2>
+      <form action="">
+        <label for="sort"
+          >Type the array elements separated by commas and press ENTER</label
+        >
+        <input type="text" class="sort" placeholder="e.g. 5, 3, 8, 1, 9, 4" />
+      </form>
+
+      <div class="controls-container">
+        <div class="algorithm-selector">
+          <div class="select">
+            <input type="checkbox" class="dropdown" id="dropdownn" />
+            <label class="choose" for="dropdownn"
+              >Choose the type of Sort</label
+            >
+          </div>
+          <div class="dropdownn-items">
+            <form action="">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  class="selectSort"
+                  id="selection"
+                  name="sortType"
+                />
+                <label for="selection">Selection Sort</label>
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  class="selectSort"
+                  id="insertion"
+                  name="sortType"
+                />
+                <label for="insertion">Insertion Sort</label>
+              </div>
+            </form>
+          </div>
+          <input type="range" name="" id="slider" min="100" max="1700"/>
+          <label for="slider">Speed of sorting</label>
+        </div>
+        <div class="buttons">
+          <button class="btn primary" onclick="Sort()">SORT</button>
+          <button class="btn secondary" onclick="shuffle()">SHUFFLE</button>
+          <button class="btn danger" onclick="clearMem()">CLEAR MEMORY</button>
+        </div>
+      </div>
+
+      <div class="visualization-section">
+        <div class="sorting"></div>
+
+        <div class="chart-container">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item">
+          <span class="legend-color default"></span>
+          <span>Default</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color comparing"></span>
+          <span>Comparing</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color current"></span>
+          <span>Current At I</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color current"></span>
+          <span>Current At J</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color sorted"></span>
+          <span>Sorted</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="sort.js"></script>
+  </body>
+</html>
